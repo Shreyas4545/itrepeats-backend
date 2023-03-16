@@ -8,7 +8,7 @@ import multer from "multer"
 
      const storage=  multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, "/uploads");
+            cb(null, "./uploads");
           },
           filename: (req, file, cb) => {
             cb(null, file.originalname);
@@ -24,4 +24,3 @@ router.route("/get-depart").get(getdepart);
 router.route("/add-sub").post(addSub);
 router.route("/get-sub").get(getSub);
 export default router;
-
