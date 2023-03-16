@@ -6,9 +6,9 @@ const storage = admin.storage();
 const bucket = storage.bucket("gs://it-repeats-ea39a.appspot.com/");
 let fileurl;
 const saveQuestionPaper = async (req, res) => {
-  console.log("Hello")
+  console.log(req.file.path)
   try {
-    await bucket.upload(req.file.path, {
+    await bucket.upload("./"+req.file.path, {
       metadata: {
         contentType: "image/png image/jpg, application/pdf",
       },
